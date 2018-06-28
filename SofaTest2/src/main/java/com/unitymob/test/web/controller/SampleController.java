@@ -45,8 +45,8 @@ public class SampleController {
         Map<String,Object> map=Maps.newHashMap();
         map.put("dd","3");
         logger.error("test error!");
-        throw new IllegalArgumentException("ddddss");
-//        helloSyncService.saySync("dd");
+      //  throw new IllegalArgumentException("ddddss");
+        helloSyncService.saySync("dd");
 //        logger.error("test error!");
 
 
@@ -61,6 +61,6 @@ public class SampleController {
 //        rabbitTemplate.convertAndSend("facebook","ad", JSON.toJSONString("ddd"));
 //        rabbitMessagingTemplate.convertAndSend("facebook","ad","hsdsdsd");
 //        rabbitTemplate.send("facebook","ad",new Message("fafda".getBytes(),null));
-       // return map;
+        return map;
     }
 }
