@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: SofaTest
+  rabbitmq:
+        host: 172.31.0.74
+        port: 5672
+        username: unitymob
+        password: unitymob
+        publisher-confirms: true
+        virtual-host: unitymob
+
+
+server:
+  port: 9991
+
+logging:
+  config: classpath:logging-config.xml
+  path: ./logs
+
+com:
+  alipay:
+    sofa:
+      tracer:
+        zipkin:
+          enabled: true
+          baseUrl: http://172.31.0.219:9411/

@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: SofaServerTest
+
+server:
+  port: 9999
+
+logging:
+  config: classpath:logging-config.xml
+  path: ./logs
+
+com:
+  alipay:
+    sofa:
+      tracer:
+        zipkin:
+          enabled: true
+          baseUrl: http://172.31.0.219:9411/

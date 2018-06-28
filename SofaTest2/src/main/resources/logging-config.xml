@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="false" debug="true">
+    <property name="filePattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS}|||%thread|||%level|||%logger|||%X{clueId}|||%msg%n"/>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss}| %highlight(%-5level) | %boldYellow(%thread) | %boldGreen(%logger{35}) | [%X{SOFA-TraceId},%X{SOFA-SpanId}] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="console"/>
+    </root>
+</configuration>
