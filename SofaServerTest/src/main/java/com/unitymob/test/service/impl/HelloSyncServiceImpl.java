@@ -15,4 +15,9 @@ public class HelloSyncServiceImpl implements HelloSyncService {
         throw new IllegalArgumentException("dd");
         //return "test";
     }
+
+    public void dd(){
+        logger.error("ddasds");
+        throw new IllegalArgumentException("fdafdsafdadd");
+    }
 }

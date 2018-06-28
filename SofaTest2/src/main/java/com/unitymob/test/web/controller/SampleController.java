@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -40,14 +41,14 @@ public class SampleController {
 
     @GetMapping("test")
     @ResponseBody
-    public Map<String,Object> springmvc(){
+    public Map<String,Object> test(){
         MDC.put("SOFA-TraceId","dddss");
         Map<String,Object> map=Maps.newHashMap();
         map.put("dd","3");
         logger.error("test error!");
       //  throw new IllegalArgumentException("ddddss");
         helloSyncService.saySync("dd");
-//        logger.error("test error!");
+        logger.error("test error!");
 
 
 //        rabbitTemplate.receiveAndReply(new ReceiveAndReplyCallback<Object, Object>() {
@@ -61,6 +62,20 @@ public class SampleController {
 //        rabbitTemplate.convertAndSend("facebook","ad", JSON.toJSONString("ddd"));
 //        rabbitMessagingTemplate.convertAndSend("facebook","ad","hsdsdsd");
 //        rabbitTemplate.send("facebook","ad",new Message("fafda".getBytes(),null));
+        return map;
+    }
+
+
+    @GetMapping("test1")
+    @ResponseBody
+    public Map<String,Object> test1(){
+        Map<String,Object> map=new HashMap<>();
+        map.put("fda","dsfd");
+        logger.error("test error!");
+        //  throw new IllegalArgumentException("ddddss");
+        helloSyncService.dd();
+        logger.error("test error!");
+
         return map;
     }
 }
